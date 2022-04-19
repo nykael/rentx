@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex:1 ;
-  background-color: ${({theme}) => theme.colors.backgorund_secondaty} ;
+  background-color: ${({theme}) => theme.colors.backgorund_secondary} ;
 `;
 
 export const CardImages = styled.View`
@@ -94,7 +94,7 @@ export const Accessories = styled.View`
 
 export const Footer = styled.View`
  width:100% ;
- background-color:${({theme}) => theme.colors.backgorund_secondaty} ;
+ background-color:${({theme}) => theme.colors.backgorund_secondary} ;
  
  padding: 24px 24px ${getBottomSpace() + 24}px ;
 `;

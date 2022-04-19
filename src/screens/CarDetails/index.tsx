@@ -68,16 +68,6 @@ export function CarDetails () {
           touro de lide indultado na praça Real Maestranza da Sevilla.
           É um belíssimo carro pra quem gosta de acelerar.
         </About>
-        <About>
-          Este é um automóvel desportivo.  Surgiu do lendário
-          touro de lide indultado na praça Real Maestranza da Sevilla.
-          É um belíssimo carro pra quem gosta de acelerar.
-        </About>
-        <About>
-          Este é um automóvel desportivo.  Surgiu do lendário
-          touro de lide indultado na praça Real Maestranza da Sevilla.
-          É um belíssimo carro pra quem gosta de acelerar.
-        </About>
       </Content>
       
       <Footer>
