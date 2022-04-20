@@ -7,6 +7,8 @@ import { useTheme } from "styled-components";
 import { Button } from "../../components/Button";
 import { Calendar } from "../../components/Calendar";
 
+import { NavigationProp, ParamListBase, useNavigation } from "@react-navigation/native";
+
 import ArrowSvg from '../../assets/arrow.svg'
 import {
   Container,
@@ -21,7 +23,13 @@ import {
 } from './styles'
 
 export function Scheduling () {
-const theme = useTheme()
+ const theme = useTheme()
+ const navigation = useNavigation<NavigationProp<ParamListBase>>()
+ 
+
+  function handleConfirmRental() {
+    navigation.navigate('SchedulingDetails')
+  }
   return(
     <Container>
       <Header>
@@ -59,7 +67,7 @@ const theme = useTheme()
       </Content>
 
       <Footer>
-         <Button title="Confirmar"/>
+         <Button title="Confirmar" onPress={handleConfirmRental}/>
       </Footer>
     </Container>
   )
