@@ -24,6 +24,7 @@ function handleCofirm () {
   navigation.navigate('Home')
 }
 
+
   return(
     <Container>
       <StatusBar 
