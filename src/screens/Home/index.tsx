@@ -22,18 +22,9 @@ export function Home () {
   const [cars, setCars] = useState<CarDTO[]>([])
   const [loading, setLoading] = useState(true)
   const navigation = useNavigation<NavigationProp<ParamListBase>>()
-  const carData = {
-  brand: 'audi',
-  name: 'RS 5 coupé',
-  rent: {
-    period:'AO DIA',
-    price: 120,
-  },
-  thumbnail: 'https://www.carliveryauto.com/wp-content/uploads/2020/01/1845987-audi-audi-png-2100_1386.png'
-  }
 
-  function handleCarDetails() {
-    navigation.navigate('CarDetails')
+  function handleCarDetails(car: CarDTO) {
+    navigation.navigate('CarDetails', {car})
   }
 
 
@@ -74,7 +65,7 @@ export function Home () {
         data={cars}
         keyExtractor={item => item.id}
         renderItem={({item}) => <Car data={item}
-        onPress={handleCarDetails}
+        onPress={() => handleCarDetails(item)}
         />}
       />
       }
