@@ -1,5 +1,8 @@
 import React from "react";
 
+import { ActivityIndicator } from "react-native";
+import { useTheme } from "styled-components";
+
 import {
   Container,
   Title
@@ -8,16 +11,26 @@ import {
 interface Props{
   title: string;
   color?: string;
-  onPress: () => void
+  onPress: () => void;
+  loading?: boolean
 }
 export function Button ({
   title,
   color,
   onPress,
+  loading = false
 }: Props) {
+  const theme = useTheme()
   return(
-    <Container color={color} onPress={onPress}>
-      <Title>{title}</Title>
+    <Container 
+    color={color}
+    onPress={onPress}
+    style={{opacity: loading === true ? .5 : 1}}
+    >
+      {loading 
+      ? <ActivityIndicator  color={theme.colors.shape}/>
+      : <Title>{title}</Title>
+    }
     </Container>
   )
 }
