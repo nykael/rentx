@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react";
 import { StatusBar, FlatList } from "react-native";
 import { useTheme } from "styled-components";
 import { BackButton } from "../../components/BackButton";
-import { Load } from "../../components/Load";
+
 
 import {AntDesign} from '@expo/vector-icons'
 
 import { Car } from "../../components/car";
 import { CarDTO } from "../../dtos/CarDTO";
 import { api } from "../../services/api";
+
+import {LoadAnimation} from "../../components/LoadAnimation";
+
 
 import {
   Container,
@@ -82,7 +85,7 @@ export function MyCars() {
           Conforto, segurança e praticidade
         </SubTitle>
       </Header>
-     {loading ? <Load /> : 
+     {loading ? <LoadAnimation/> : 
         <Content>
           <Appointments>
             <AppointmentsTitle>Agendamentos Feitos</AppointmentsTitle>

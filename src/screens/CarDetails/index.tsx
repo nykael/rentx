@@ -92,19 +92,22 @@ export function CarDetails () {
         style={[
           headerStyleAnimation,  
           styles.header,
+          {
+            backgroundColor: theme.colors.backgorund_secondary
+          }
         ]}
       >
         <Header>
           <BackButton onPress={handleBack} />
         </Header>
 
-        <Animated.View style={sliderCarsStyleAnimation}>
           <CardImages>
+        <Animated.View style={sliderCarsStyleAnimation}>
             <ImageSlider 
               imagesUrl={car.photos}
             />
-          </CardImages>
         </Animated.View>
+          </CardImages>
       </Animated.View>
       <Animated.ScrollView
         contentContainerStyle={{
