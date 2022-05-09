@@ -10,6 +10,7 @@ import { BackButton } from "../../../components/BackButton";
 import { Bullet } from "../../../components/Bullet";
 import { PasswordInput } from "../../../components/PasswordInput";
 import { Button } from "../../../components/Button";
+import { Confirmation } from "../../Confirmation";
 
 import { useTheme } from "styled-components";
 
@@ -51,6 +52,12 @@ export function SingUpSecondStep  () {
     if(password != passwordConfirm) {
       return Alert.alert('As senhas não são iguais')
     }
+
+    navigation.navigate('Confirmation', {
+      nextScreenRoute: 'Signin',
+      title: 'Conta criada!',
+      message: `Agora é só fazer login\ne aproveitar.`
+    })
   }
 
   function handleBack() {
