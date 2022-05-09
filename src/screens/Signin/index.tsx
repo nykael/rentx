@@ -12,6 +12,7 @@ import {Button} from '../../components/Button'
 
 import { Input } from '../../components/Input';
 import {PasswordInput } from '../../components/PasswordInput';
+ 
 
 import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 
@@ -25,6 +26,7 @@ import {
 } from './styles'
 
 import * as Yup from 'yup'
+import { SingUpFirstStep } from '../SingUp/SingUpFirstStep';
 
 export function Signin () {
  const theme = useTheme()
@@ -32,6 +34,7 @@ export function Signin () {
  const [password, setPassword] = useState('')
 
  const navigation = useNavigation<NavigationProp<ParamListBase>>()
+
 
  async function handleSingIn () {
   try {
@@ -54,11 +57,14 @@ export function Signin () {
       Alert.alert('Opa', error.message)
     }else{
       Alert.alert('Error na autenticação', 
-      'Ocorreu um erro ao fazer login, verfique as credenciais')
+      'Ocorreu um erro ao fazer login, verfique as credenciais'
+      )
     }
-
   }
+ }
 
+ function handleNewAcount() {
+  navigation.navigate('SingUpFirstStep')
  }
 
     return (
@@ -107,7 +113,7 @@ export function Signin () {
 
                 <Button 
                   title='Criar conta gratuita'
-                  onPress={ () => {}}
+                  onPress={ handleNewAcount}
                   loading={false}
                   color={theme.colors.backgorund_secondary}
                   light
