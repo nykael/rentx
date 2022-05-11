@@ -2068,6 +2068,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-navigation/bottom-tabs@npm:^6.3.1":
+  version: 6.3.1
+  resolution: "@react-navigation/bottom-tabs@npm:6.3.1"
+  dependencies:
+    "@react-navigation/elements": ^1.3.3
+    color: ^3.1.3
+    warn-once: ^0.1.0
+  peerDependencies:
+    "@react-navigation/native": ^6.0.0
+    react: "*"
+    react-native: "*"
+    react-native-safe-area-context: ">= 3.0.0"
+    react-native-screens: ">= 3.0.0"
+  checksum: cb8e97576b37ba7a3b098ecf2031bfe7184595943a2b6e387b138750770608004988a25ca36bf89dd5f83cfcc39920f6eef8e9bdb77e848bdd402a62b1cfc735
+  languageName: node
+  linkType: hard
+
 "@react-navigation/core@npm:^6.2.1":
   version: 6.2.1
   resolution: "@react-navigation/core@npm:6.2.1"
@@ -3382,7 +3399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-convert@npm:^1.9.0":
+"color-convert@npm:^1.9.0, color-convert@npm:^1.9.3":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
   dependencies:
@@ -3424,12 +3441,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color-string@npm:^1.6.0":
+  version: 1.9.1
+  resolution: "color-string@npm:1.9.1"
+  dependencies:
+    color-name: ^1.0.0
+    simple-swizzle: ^0.2.2
+  checksum: c13fe7cff7885f603f49105827d621ce87f4571d78ba28ef4a3f1a104304748f620615e6bf065ecd2145d0d9dad83a3553f52bb25ede7239d18e9f81622f1cc5
+  languageName: node
+  linkType: hard
+
 "color-support@npm:^1.1.3":
   version: 1.1.3
   resolution: "color-support@npm:1.1.3"
   bin:
     color-support: bin.js
   checksum: 9b7356817670b9a13a26ca5af1c21615463b500783b739b7634a0c2047c16cef4b2865d7576875c31c3cddf9dd621fa19285e628f20198b233a5cfdda6d0793b
+  languageName: node
+  linkType: hard
+
+"color@npm:^3.1.3":
+  version: 3.2.1
+  resolution: "color@npm:3.2.1"
+  dependencies:
+    color-convert: ^1.9.3
+    color-string: ^1.6.0
+  checksum: f81220e8b774d35865c2561be921f5652117638dcda7ca4029262046e37fc2444ac7bbfdd110cf1fd9c074a4ee5eda8f85944ffbdda26186b602dd9bb05f6400
   languageName: node
   linkType: hard
 
@@ -7737,6 +7774,7 @@ __metadata:
     "@babel/core": ^7.12.9
     "@expo-google-fonts/archivo": ^0.2.2
     "@expo-google-fonts/inter": ^0.2.2
+    "@react-navigation/bottom-tabs": ^6.3.1
     "@react-navigation/native": ^6.0.10
     "@react-navigation/native-stack": ^6.6.1
     "@types/react": ~17.0.21
