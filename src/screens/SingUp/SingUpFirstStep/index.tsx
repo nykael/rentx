@@ -22,6 +22,7 @@ import {
     Form,
     FormTitle
 } from './styles'
+import { useAuth } from "../../../hooks/auth";
 
 export function SingUpFirstStep () {
   const navigation = useNavigation<NavigationProp<ParamListBase>>()
@@ -29,6 +30,8 @@ export function SingUpFirstStep () {
   const [name, setName] = useState('')
   const [email,setEmail] = useState('')
   const [drivelicense, setDriverLicense] = useState('')
+
+  const {user} = useAuth()
 
   async function handleNextScreenshot() {
 

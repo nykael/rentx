@@ -23,6 +23,7 @@ import {
     Form,
     FormTitle
 } from './styles'
+import { api } from "../../../services/api";
 
 interface Params {
   user: {
@@ -44,7 +45,7 @@ export function SingUpSecondStep  () {
   const {user} = route.params as Params;
 
 
-  function handleRegister() {
+  async function handleRegister() {
     if(!password || !passwordConfirm) {
       return Alert.alert('Informe a senha e a confirmação')
     }
@@ -53,11 +54,23 @@ export function SingUpSecondStep  () {
       return Alert.alert('As senhas não são iguais')
     }
 
-    navigation.navigate('Confirmation', {
-      nextScreenRoute: 'Signin',
-      title: 'Conta criada!',
-      message: `Agora é só fazer login\ne aproveitar.`
+    await api.post('/users', {
+      name: user.name,
+      email: user.email,
+      driver_license: user.drivelicense,
+      password
     })
+    .then(() => {
+      navigation.navigate('Confirmation', {
+        nextScreenRoute: 'Signin',
+        title: 'Conta criada!',
+        message: `Agora é só fazer login\ne aproveitar.`
+      })
+    })
+    .catch(() => {
+      Alert.alert('Opa', 'Não foipossível cadastrar')
+    })
+
   }
 
   function handleBack() {

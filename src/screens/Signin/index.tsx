@@ -6,6 +6,8 @@ import {
   Keyboard,
   Alert
 } from 'react-native'
+
+import {useAuth} from '../../hooks/auth'
 import { useTheme } from 'styled-components';
 
 import {Button} from '../../components/Button'
@@ -34,24 +36,25 @@ export function Signin () {
  const [password, setPassword] = useState('')
 
  const navigation = useNavigation<NavigationProp<ParamListBase>>()
+ const {signIn} = useAuth()
 
 
  async function handleSingIn () {
   try {
     const schema = Yup.object().shape({
+      password: Yup.string()
+      .required('A senha é Obrigatória'),
       email: Yup.string()
        .required('E-mail obrigatório')
        .email('Digite um e-mail válido'),
-      password: Yup.string()
-       .required('A senha é Obrigatória')
+     
     });
   
     await schema.validate({email, password})
     Alert.alert('Tudo certo !')
 
 
-    //fazer login
-    
+    signIn({email, password});
   } catch (error) {
     if(error instanceof Yup.ValidationError) {
       Alert.alert('Opa', error.message)
